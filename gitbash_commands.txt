@@ -2,7 +2,7 @@
 
 1. git init
 2. git config --global user.name "ST10451732" 
-3. git config --global user.email "ST10451732@vcconnect.edu.za"
+3. git config --global user.email "st10451732@vcconnect.edu.za"
 
 4. git clone hhttps://github.com/ST10451732/TutorialRepo1.git
 5. git remote show origin
@@ -115,4 +115,29 @@
 		$ git remote show origin
 			# gives more details to remote origins
 
+	Check Local Branches
 		
+		
+		
+		
+	SSH connect
+		1. create ssh key
+		$ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+			#note the local key file id_rsa.pub path
+			
+						
+		2. Add SSH Key to GitHub
+		   #cat the file to check SSH key
+		$ cat c:/Users/Username/.ssh/id_rsa.pub
+			#copy contents to Github SSH keys:
+			#new ssh key
+			#give key name
+			#paste cat contents to Key
+			#save
+			
+		3. back on local repo, push to remote repo using SSH key and not HTTPS
+			$ git status
+			$ git remote -v
+			$ git remote set-url origin git@github.com:ST10451732/POE.git
+			$ git push -f origin main
+			$ git remote show origin
