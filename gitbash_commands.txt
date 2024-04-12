@@ -46,38 +46,73 @@
 	
 	-----POE notes:
 	
-	create a local Git repository for existing Java project.
+	Create a local Git repository for existing Java project.
 		//open terminal and cd to project path
 		cd .VCCONNECT/PROG
 		rm -rf .git
 		
-		git init
-		git config --global user.name "ST10451732"
-		git config --global user.email "st10451732@vcconnect.edu.za"
+		$ git init
+		$ git config --global user.name "username"
+		$ git config --global user.email "username@email.com"
 		
 		//Copy the Repository Link from GitHub: Go to GitHub, navigate to your repository, and copy the repository URL.
+		$ git remote add origin {URL of your GitHub repository that you copied.}
+			# $ git remote add origin https://github.com//username/repository.git 
 		
-		git remote add origin https://github.com/ST10451732/POE.git  //Replace http://www.github.repo.com with the URL of your GitHub repository that you copied.
-		git remote show origin
+		//Show added repo
+		$ git remote show origin
 		
-	Add Changes and Commit
-		//after adding a new file or making changes to existing file:
-		git add .
-		
+	Add Changes to Repo
+		$ git add .
 		// got an error:warning: in the working copy of 'gitbash_commands.txt', LF will be replaced by CRLF the next time Git touches it
+		
 		// these commands help fix this coz currently  “LF will be replaced by CRLF,” indicates that Git is converting line endings from Unix-style (LF) to Windows-style (CRLF) in my repo
-		git config --global core.autocrlf true
+		$ git config --global core.autocrlf true
 			# Configure Git to ensure line endings in files you checkout are correct for Windows.
 			# Run add command again: git add .
+			
 		
-		//commit the chamges:
-		git commit -m "Your commit message here"
+		// add files to repo
+		$ git config --global core.autocrlf true
+		$ git add . -u
+		
+	Commit changes to Repo
+		$ git commit -m "Your commit message here"
+			# $ git commit -m "Added new pre repo commands to inlcude Windows line ending compatability"
 	
+	
+	Push changes to online repo
 		//push changes to the GitHub repository:
-		git push -u origin master
-
-
+		$ git push -u origin master
+		$ git push 
+			#if branch is still the same
+					
 		
+	Check current local repo status		
+		$ git status
 		
+		// Check last git commit histories
+		$ git log
+		
+		// print git log in my own way: seperated by |
+		$ git log --pretty=format:"%h | %an | %ad : %s" --date=short
+			#%h: Abbreviated commit hash - use this as version or ID
+			#%an: Author name
+			#%ad: Author date (formatted)
+			#%s: Subject (commit message)
+			
+		
+	Revert to previous version
+		$ git show ca4ca44:gitbash_commands.txt
+
+	check remote repository configured to online repo
+		$ git remote -v
+			# origin  https://github.com/username/repository.git (fetch)
+			# origin  https://github.com/username/repository.git (push)
+			# -- origin is the name of the remote repository
+			# -- https://github.com/username/repository.git is the URL of the remote repository
+		
+		$ git remote show origin
+			# gives more details to remote origins
 
 		
