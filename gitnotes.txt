@@ -1,0 +1,13 @@
+---Create Repo on https://github.com/ST10451732/
+
+1. git init
+2. git config --global user.name "ST10451732" 
+3. git config --global user.email "ST10451732@vcconnect.edu.za"
+
+4. git clone http://github.com/ST10451732/TutorialRepo1
+5. git remote show origin
+6. git remote add origin http://github.com/ST10451732/TutorialRepo1
+7. git remote show origin
+
+8. git pull origin main
+9. =====netbeans new project
